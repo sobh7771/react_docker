@@ -1,0 +1,8 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t sobh7771/client -f Dockerfile.dev .
+
+script:
+  - docker run sobh7771/client -e CI=true yarn test
